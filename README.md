@@ -14,9 +14,13 @@ Chaque démonstrateur prend plusieurs options. (Voir ci-dessous)
 PARTIE HARRIS:
 
 Démonstrateurs : demolena.sh democamera.sh democarres.sh
+
 Application du détecteur de Harris sur lena.inr, cameraman.inr ou carre16.pgm. 3 possibilités sont données pour chaque démonstrateur:
+
     -o: Le détecteur sera exécuté avec des paramètres optimaux, et ensuite comparé à l'image RESFILTER obtenue par l'application du filtre de l'Exercice 7 à l'image suivie d'un seuillage (par le seuil optimal).
+    
     -m: Le détecteur sera exécuté avec plusieurs séries de paramètres non optimaux, et chaque résultat sera comparé à RESFILTER.
+    
     -p: Le détecteur sera exécuté avec les paramètres fournis par l'utilisateur: Kappa, Sigma et Seuil.
 
 Scripts utilisés par les démonstrateurs:
@@ -42,21 +46,29 @@ Codes:
 PARTIE HOUGH:
 
 Démonstrateurs: demorectangle.sh demofenetre.sh demorotate.sh democircle.sh
+
 Application de la transformée de Hough et :
+
     1)test de la détection de droites sur rectangle.inr, fenetre.inr, rotate.inr.
     2)test de la détection de cercles sur cerc.inr
 
 Utilisation pour demorectangle,demorotate et demofenetre: ./[nom du démonstrateur] [-p $Tolerance $dtheta $drho]
 
+
 Si -p est spécifié, l'utilisateur doit fournir les paramètres Tolerance,dtheta et drho.
+
 
 Utilisation pour democircle: ./[nom du démonstrateur] [-p $Tolerance $dx $dy $dr]
 
+
 Si -p est spécifié, l'utilisateur doit fournir les paramètres Tolerance,dx, dy et dr.
+
 
 Le démonstrateur affiche l'accumulateur obtenu et superpose les droites détectées à l'image analysée.
 
+
 Remarque: Pour l'image fenetre.inr, l'éxecution dure environ 25 minutes.
+
 
 Scripts utilisés par les démonstrateurs:
 
@@ -81,14 +93,19 @@ Codes:
 PARTIE SPLIT/MERGE:
 
 Démonstrateurs : demomuscle.sh demoseiche.sh demobureau.sh
+
 Application de l'algorithme de split/merge sur muscle.pgm, seiche.pgm  ou bureau.pgm. 3 possibilités sont données pour chaque démonstrateur:
+
     -o: Le programme sera exécuté avec des paramètres optimaux.
+    
     -m: Le programme sera exécuté avec plusieurs séries de paramètres non optimaux.
+    
     -p: Le détecteur sera exécuté avec les paramètres fournis par l'utilisateur: Split_thresh, Merge_thresh, xmin et ymin.
 
 
 Codes (main):
     mainsplit.c mainmerge.c
+    
 
 
     Utilisation:
@@ -102,18 +119,27 @@ Codes et fichiers: ./crane.sh exo4.4.sh ./lcr.sh ./mb.sh ./mg.sh atlas.txt stats
 
  atlas.txt: fichier prérempli, contenant des informations sur les
 	       regions de l'atlas sous la forme:
+	       
        	       	 nom_de_la_region niveau_de_gris
+ 
             ce fichier est utilisé par exo4.4.sh pour determiner les différentes
             régions de l'atlas.
+            
  Makefile:
+ 
 	 make: génère tous les fichiers demandés dans le TME
 	       (execute tous les scripts dans le bon ordre)
+	       
 	 make exo4: génère les résultats de l'exercice 4
 	       (execute tous les scripts sauf lcr.inr)
+	       
 	 make statsreg: genere l'executable statsreg
+	 
 	 make regions: genere les fichiers regions 1 à 5
 	       (execute crane.sh mb.sh mg.sg)
+	       
 	 make lcr.inr: (execute lcr.sh)
+	 
 	 make clean: efface tous les fichiers créés
 
 
