@@ -1,5 +1,6 @@
 PROJET LI316
-L3 PIMA
+
+L3 PIMA - PATEL M.TAYYIB
 
 
 Le projet est subdivisé en 4 parties : harris, hough, representation et splitmerge.
