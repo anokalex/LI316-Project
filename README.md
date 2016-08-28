@@ -2,6 +2,8 @@ PROJET LI316
 
 L3 PIMA - PATEL M.TAYYIB
 
+Dependance: Inrimage: http://inrimage.gforge.inria.fr
+
 
 Le projet est subdivisé en 4 parties : harris, hough, representation et splitmerge.
 
