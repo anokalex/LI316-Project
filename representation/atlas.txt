@@ -1,0 +1,5 @@
+crane 255
+mgg 80
+mgd 140
+mbg 180
+mbd 200

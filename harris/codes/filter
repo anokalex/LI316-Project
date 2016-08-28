@@ -1,0 +1,37 @@
+#! /bin/bash
+
+name=$1
+if [[ -f tempo$1 ]]; then
+bool=0
+else
+bool=1
+fi
+
+if [[ $bool -eq 0 ]]; then
+
+
+echo "-1 -1 -1 -1 8 -1 -1 -1 -1" |cim -x 3 -y 3 -r > filterres
+
+
+if [[ $name == "lena" ]]; then
+conv ../images/$1.inr.gz filterres -dir |norma|mb -n 0.1|cco -f> "$name"filter.inr
+xvis "$name"filter.inr -xsh tempo$name -nu -p -2
+elif [[ $name == "carre16" ]]; then
+conv ../images/carre16.pgm filterres -dir |norma|mb -n 0.05 |cco -f > "$name"filter.inr
+xvis "$name"filter.inr -xsh tempo$name -nu -p -3
+elif [[ $name == "cameraman" ]]; then
+conv ../images/$1.inr.gz filterres -dir |norma|mb -n 0.25|cco -f> "$name"filter.inr
+xvis "$name"filter.inr -xsh tempo$name -nu -p -2
+else
+    echo "Utilisation: ./filter [lena|carre16|cameraman]"
+    exit 1
+fi
+
+else
+     echo "Utilisation: ./filter [lena|carre16|cameraman]"
+    echo "Vous devez executer ./plotslocseuil.sh sur lena ou cameraman ou carre16 pour obtenir tempo$name et afficher les croix"
+    exit 1
+fi
+
+
+exit 0
