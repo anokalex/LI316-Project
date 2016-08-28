@@ -1,3 +1,7 @@
+PROJET LI316
+L3 PIMA
+
+
 Le projet est subdivisé en 4 parties : harris, hough, representation et splitmerge.
 
 Pour chaque partie, 3 démonstrateurs sont présents, testant le code sur 3 images différentes (pour la partie hough, il y en a 1 en plus pour tester la détection de cercle).
